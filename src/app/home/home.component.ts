@@ -13,13 +13,33 @@ import { DataApiService } from 'src/app/services/data-api.service';
 export class HomeComponent implements OnInit {
 
   heroes = {};
+  selectedHero;
+
+  numberOfLike: number = 0;
+  numberOfDislike: number = 0;
 
   constructor(private dataApi: DataApiService) { 
     this.dataApi.getAllHeroes().subscribe(eachHero => {
-      console.log(eachHero);
       this.heroes = eachHero;
     });
   }
 
-  ngOnInit() { }
+  contLikeClicked(){
+    this.numberOfLike++;
+    localStorage.setItem('like', JSON.stringify(this.numberOfLike));
+  }
+
+  contDislikeClicked(){
+    this.numberOfDislike++;
+    localStorage.setItem('dislike', JSON.stringify(this.numberOfDislike));
+    return this.numberOfDislike;
+  }
+
+  getElement(element){
+    this.selectedHero = element;
+    localStorage.setItem('heroPos', JSON.stringify(this.selectedHero));
+  }
+
+  ngOnInit() {
+   }
 }

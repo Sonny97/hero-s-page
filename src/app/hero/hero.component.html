@@ -1,1 +1,38 @@
-<p>hero works!</p>
+<div class="container">
+  <div class="container-title">
+    <h1 class="title__position">Super Heroes</h1>
+    <h2 class="title__position">
+        <a routerLink="">Regresar</a>
+    </h2>
+  </div>
+
+  <div class="container-heroes">
+    <div class="container-heroes__each-hero">
+      <div class="hero-image__size">
+          <img src="{{ hero.picture }}" alt="Hero Image" />
+      </div>
+      <div class="hero-description">
+          <div class="hero-title__position">
+            <h2>{{ hero.name }}</h2>
+          </div>
+          <div class="hero-editorial__title">
+            <h3>Editorial: {{ hero.publisher }}</h3>
+          </div>
+          <div class="hero-description__text">
+            <p>
+              {{ hero.info }}
+            </p>
+          </div>
+        <div class="hero-options__position">
+          <button (click)="contLikeClicked()">
+            <i class="fas fa-thumbs-up"></i>
+          </button>
+          <button (click)="contDislikeClicked()">
+            <i class="fas fa-thumbs-down"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

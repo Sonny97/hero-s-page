@@ -5,32 +5,34 @@
 
   <div class="container-heroes">
     <div class="container-heroes__each-hero" *ngFor="let hero of heroes">
-      <a routerLink="/home">
-        <div class="hero-image__size">
-          <img src='{{ hero.picture }}' alt="Hero Image"/>
-        </div>
-        <div class="hero-description">
+      <div class="hero-image__size">
+        <a routerLink="/hero" (click)="getElement(hero)">
+          <img src="{{ hero.picture }}" alt="Hero Image" />
+        </a>
+      </div>
+      <div class="hero-description">
+        <a routerLink="/hero" (click)="getElement(hero)">
           <div class="hero-title__position">
-            <h2> {{ hero.name }} </h2>
+            <h2>{{ hero.name }}</h2>
           </div>
           <div class="hero-editorial__title">
-            <h3>Editorial: {{ hero.publisher }} </h3>
+            <h3>Editorial: {{ hero.publisher }}</h3>
           </div>
           <div class="hero-description__text">
             <p>
               {{ hero.info }}
             </p>
           </div>
-          <div class="hero-options__position">
-            <button>
-              <i class="fas fa-thumbs-up"></i>
-            </button>
-            <button>
-              <i class="fas fa-thumbs-down"></i>
-            </button>
-          </div>
+        </a>
+        <div class="hero-options__position">
+          <button (click)="contLikeClicked()">
+            <i class="fas fa-thumbs-up"></i>
+          </button>
+          <button (click)="contDislikeClicked()">
+            <i class="fas fa-thumbs-down"></i>
+          </button>
         </div>
-      </a>
+      </div>
     </div>
   </div>
 
