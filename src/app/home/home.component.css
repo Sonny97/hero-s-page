@@ -1,0 +1,61 @@
+.container {
+    margin: 2%;
+    width: auto;
+    box-sizing: content-box;
+}
+
+.container-title {
+    background-color: #cfcfcf;
+    height: 100px;
+    margin-bottom: 1%;
+}
+
+.title__position {
+    font-size: 36px;
+    font-weight: 500;
+    padding: 2% 0 0 2%;
+    width: auto;
+}
+
+.container-heroes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: auto;
+    padding: 0 2% 0 2%;
+}
+
+.container-heroes__each-hero {
+    width: 32%;
+    display: flex;
+    border: 1px solid black;
+    margin-bottom: 1%;
+}
+
+.container-heroes__each-hero a {
+    display: flex;
+}
+
+.hero-image__size {
+    height: auto;
+    margin: auto;
+    padding: 0 2% 0 2%;
+}
+
+.hero-image__size img {
+    border-radius: 50%;
+    height: 185px;
+}
+
+.hero-description {
+
+}
+
+.hero-title__position {
+
+}
+
+.hero-editorial__title {
+
+}
